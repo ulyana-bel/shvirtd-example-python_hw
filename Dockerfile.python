@@ -1,0 +1,28 @@
+# --- Этап 1: Сборщик зависимостей (Builder) ---
+FROM python:3.12-slim AS builder
+
+WORKDIR /app
+
+# Создаём виртуальное окружение в /opt/venv
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Копируем только файл зависимостей для кэширования слоёв и устанавливаем пакеты
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+# --- Этап 2: Финальный образ (Runtime) ---
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Копируем готовое виртуальное окружение с установленными библиотеками из этапа builder
+COPY --from=builder /opt/venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Обязательная конструкция по условию задания (лишнее отсечётся через .dockerignore)
+COPY . .
+
+# Запускаем приложение с помощью uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
