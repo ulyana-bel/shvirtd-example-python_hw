@@ -1,4 +1,5 @@
 # Домашнее задание к занятию 5. «Практическое применение Docker»
+<Белопух У.Н.>
 
 ## Задача 0
 1. Убедитесь что у вас НЕ(!) установлен ```docker-compose```, для этого получите следующую ошибку от команды ```docker-compose --version```
@@ -100,5 +101,5 @@ See 'snap info docker' for additional versions.
 Предоставьте скриншоты  действий .
 
 
-![task-6](img/task_6-1.png) 
+![task-6](img/task_6-1.png)
 ![task-6](img/task_6-2.png)
