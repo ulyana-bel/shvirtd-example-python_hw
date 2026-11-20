@@ -101,5 +101,5 @@ See 'snap info docker' for additional versions.
 Предоставьте скриншоты  действий .
 
 
-![task-6](img/task_6-1.png)
+![task-6](img/task_6-1.jpg)
 ![task-6](img/task_6-2.png)
