@@ -92,6 +92,7 @@ See 'snap info docker' for additional versions.
 4. Предоставьте скрипт, cron-task и скриншот с несколькими резервными копиями в "/opt/backup"
 
 Скрипт - [backup.sh](backup.sh)
+
 ![task-5](img/task_5-1.png)
 
 
