@@ -2,7 +2,7 @@
 
 set -e
 
-# 1. Подгружаем переменные из файла .env (не храним пароли в коде!)
+# 1. Подгружаем переменные из файла .env
 ENV_FILE="/opt/shvirtd-example-python/.env"
 if [ -f "$ENV_FILE" ]; then
     set -a
